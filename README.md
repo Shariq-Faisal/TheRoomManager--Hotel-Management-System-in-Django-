@@ -98,8 +98,6 @@ python manage.py runserver
 
 ## 🎨 Screenshots
 
-
-<img width="1844" height="914" alt="Screenshot 2025-11-29 012905" src="https://github.com/user-attachments/assets/93f1f17b-0549-47c8-8797-90bf0d4c8440" />
 <img width="1857" height="797" alt="Screenshot 2025-11-29 012848" src="https://github.com/user-attachments/assets/1a185832-68cb-40b2-baad-90a21fbac841" />
 <img width="1873" height="879" alt="Screenshot 2025-11-29 012833" src="https://github.com/user-attachments/assets/7aa642dc-aebb-40ec-86d8-4b11e7a681a1" />
 <img width="1864" height="912" alt="Screenshot 2025-11-29 012819" src="https://github.com/user-attachments/assets/bc0c6af0-2742-4379-bb82-7b51fe0fd33b" />
@@ -108,6 +106,7 @@ python manage.py runserver
 <img width="1899" height="1016" alt="Screenshot 2025-11-29 012636" src="https://github.com/user-attachments/assets/ff71ea8b-5be8-41cd-9632-03d9310759cc" />
 <img width="1919" height="1020" alt="Screenshot 2025-11-29 012553" src="https://github.com/user-attachments/assets/4bac1d4f-0233-407a-94ec-a2b1a7e99a3a" />
 <img width="1919" height="1019" alt="Screenshot 2025-11-29 012531" src="https://github.com/user-attachments/assets/13b949dc-e91b-45fc-8eeb-1511474ee588" />
+<img width="1844" height="914" alt="Screenshot 2025-11-29 012905" src="https://github.com/user-attachments/assets/93f1f17b-0549-47c8-8797-90bf0d4c8440" />
 
 ---
 
