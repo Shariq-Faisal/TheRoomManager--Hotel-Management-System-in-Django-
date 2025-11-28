@@ -1,0 +1,75 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">
+      {% if booking %} Edit Booking {% else %} Add Booking {% endif %}
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <form method="POST">
+      {% csrf_token %}
+
+      <!-- Customer -->
+      <div class="form-group">
+        <label>Customer</label>
+        <select name="customer" class="form-control" required>
+          {% for c in customers %}
+          <option value="{{ c.id }}"
+            {% if booking and booking.customer.id == c.id %} selected {% endif %}>
+            {{ c.first_name }} {{ c.last_name }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Room -->
+      <div class="form-group">
+        <label>Room</label>
+        <select name="room" class="form-control" required>
+          {% for r in rooms %}
+          <option value="{{ r.id }}"
+            {% if booking and booking.room.id == r.id %} selected {% endif %}>
+            {{ r.number }} ({{ r.room_type }})
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <!-- Check-In -->
+      <div class="form-group">
+        <label>Check-In</label>
+        <input type="date" name="check_in" class="form-control"
+               value="{{ booking.check_in|date:'Y-m-d' }}" required>
+      </div>
+
+      <!-- Check-Out -->
+      <div class="form-group">
+        <label>Check-Out</label>
+        <input type="date" name="check_out" class="form-control"
+               value="{{ booking.check_out|date:'Y-m-d' }}" required>
+      </div>
+
+      <!-- Status -->
+      <div class="form-group">
+        <label>Status</label>
+        <select name="status" class="form-control" required>
+          {% for s in status_choices %}
+          <option value="{{ s }}"
+            {% if booking and booking.status == s %} selected {% endif %}>
+            {{ s }}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <button class="btn btn-success">
+        {% if booking %} Update Booking {% else %} Add Booking {% endif %}
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

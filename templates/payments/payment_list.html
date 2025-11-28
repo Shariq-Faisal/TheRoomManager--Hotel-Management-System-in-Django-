@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+{% block title %}Payments - HMS{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Payments</h3>
+    <a href="{% url 'payment_create' %}" class="btn btn-primary float-right">Add Payment</a>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Booking</th>
+          <th>Customer</th>
+          <th>Room</th>
+          <th>Amount</th>
+          <th>Payment Date</th>
+          <th>Method</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in payments %}
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.booking.id }}</td>
+          <td>{{ p.booking.customer.first_name }} {{ p.booking.customer.last_name }}</td>
+          <td>{{ p.booking.room.number }}</td>
+          <td>{{ p.amount }}</td>
+          <td>{{ p.payment_date|date:"Y-m-d" }}</td>
+          <td>{{ p.method }}</td>
+          <td>
+            <a href="{% url 'payment_edit' p.id %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'payment_delete' p.id %}" class="btn btn-sm btn-danger" 
+               onclick="return confirm('Are you sure?')">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

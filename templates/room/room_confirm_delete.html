@@ -1,0 +1,18 @@
+{% extends 'partials/base.html' %}
+{% block title %}Delete Room - HMS{% endblock %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Delete Room</h3>
+  </div>
+  <div class="card-body">
+    <p>Are you sure you want to delete room {{ room.number }}?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="{% url 'room_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

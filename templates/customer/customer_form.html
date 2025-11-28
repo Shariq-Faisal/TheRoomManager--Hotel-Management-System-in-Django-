@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">
+            {% if customer %} Edit Customer {% else %} Add Customer {% endif %}
+        </h3>
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="first_name" class="form-control"
+                       value="{{ customer.first_name|default:'' }}">
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="last_name" class="form-control"
+                       value="{{ customer.last_name|default:'' }}">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control"
+                       value="{{ customer.email|default:'' }}">
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" name="phone" class="form-control"
+                       value="{{ customer.phone|default:'' }}">
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <textarea name="address" class="form-control">{{ customer.address|default:'' }}</textarea>
+            </div>
+
+            <button class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

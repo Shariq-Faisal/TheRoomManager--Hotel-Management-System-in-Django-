@@ -1,0 +1,68 @@
+{% extends 'partials/base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>{{ total_rooms }}</h3>
+                <p>Total Rooms</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-bed"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>{{ available_rooms }}</h3>
+                <p>Available Rooms</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-door-open"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>{{ total_customers }}</h3>
+                <p>Total Customers</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3>{{ total_bookings }}</h3>
+                <p>Total Bookings</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-primary">
+            <div class="inner">
+                <h3>${{ total_payments }}</h3>
+                <p>Total Payments</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-credit-card"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
